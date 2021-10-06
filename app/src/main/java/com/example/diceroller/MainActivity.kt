@@ -27,11 +27,10 @@ class MainActivity : AppCompatActivity() {
         // gets dice rol using dice class below
         val diceRoll = dice.roll()
 
-        // gets the text view where dice roll will be displayed
-        val resultImageView: ImageView = findViewById(R.id.imageView)
+        // gets the image view where dice roll will be displayed
+        val diceImage: ImageView = findViewById(R.id.imageView)
 
-        // converts dice roll to string for display in textview
-        //resultImageView = diceRoll.toString()
+        diceImage.setImageResource(R.drawable.dice_2)
     }
 }
 // dice class that gets random roll value
