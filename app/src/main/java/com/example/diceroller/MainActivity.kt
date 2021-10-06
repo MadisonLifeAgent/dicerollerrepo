@@ -17,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice()
         }
+
+        rollDice()
+
     }
 
     // roll dice method or function
@@ -30,7 +33,17 @@ class MainActivity : AppCompatActivity() {
         // gets the image view where dice roll will be displayed
         val diceImage: ImageView = findViewById(R.id.imageView)
 
-        diceImage.setImageResource(R.drawable.dice_2)
+        val drawableResource = when (diceRoll) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+
+        diceImage.setImageResource(drawableResource)
+        diceImage.contentDescription = diceRoll.toString()
     }
 }
 // dice class that gets random roll value
